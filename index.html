@@ -3,206 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikbal Lbs - Portofolio Pribadi</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Benjamin Engle - Portofolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            line-height: 1.6; 
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #FFD700; }
+        
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 20px 100px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #home h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        #home .highlight {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #home p { 
+            font-size: 1.3rem; 
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #FFD700;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #4A90E2, #7ED321);
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(74,144,226,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(74,144,226,0); }
+            100% { box-shadow: 0 0 0 0 rgba(74,144,226,0); }
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .skill-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover { transform: translateY(-10px); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            #home h1 { font-size: 2.5rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">NamaKamu</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">Tentang</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Proyek</a></li>
-                <li><a href="#contact" class="nav-link">Kontak</a></li>
+    <header>
+        <nav>
+            <div class="logo">Benjamin Engle</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Halo, Saya <span class="highlight">Nama Kamu</span></h1>
-            <h2>Web Developer & Designer</h2>
-            <p>Saya gamers, responsif, dan user-friendly.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-                <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="floating-card">👨‍💻</div>
-        </div>
+    <section id="home">
+        <h1>Halo! Saya <span class="highlight">Benjamin Engle</span></h1>
+        <p>Web Developer | UI/UX Designer | Tech Enthusiast</p>
+        <a href="#contact" class="btn">Hubungi Saya</a>
+        <a href="#skills" class="btn">Lihat Skills</a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Saya adalah <strong>Web Developer</strong> dengan passion di Frontend Development. 
-                    Suka membuat website yang tidak hanya cantik tapi juga fungsional.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>50+</h3>
-                            <p>Proyek Selesai</p>
-                        </div>
-                        <div class="stat">
-                            <h3>2+</h3>
-                            <p>Tahun Pengalaman</p>
-                        </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Kepuasan Client</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="profile-pic"></div>
-                </div>
+    <section id="about">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-grid">
+            <div>
+                <h3>Hi, saya Benjamin!</h3>
+                <p>Saya adalah <strong>Web Developer</strong> yang passionate dengan teknologi. 
+                Suka membuat website modern, responsive, dan user-friendly. 
+                Selalu belajar hal baru setiap hari!</p>
+                <ul>
+                    <li>🎓 Mahasiswa Teknik Informatika</li>
+                    <li>💻 Frontend Developer</li>
+                    <li>🎨 UI/UX Designer</li>
+                    <li>🚀 Open Source Contributor</li>
+                </ul>
+            </div>
+            <div>
+                <div class="profile-pic"></div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js-square"></i>
-                    <h3>JavaScript</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="75%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="70%"></div>
-                    </div>
-                </div>
+    <section id="skills" style="background: #f8f9fa;">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>🌐 Frontend</h3>
+                <p>HTML5 • CSS3 • JavaScript • React • Tailwind</p>
+            </div>
+            <div class="skill-card">
+                <h3>🎨 Design</h3>
+                <p>Figma • Adobe XD • Photoshop • Illustrator</p>
+            </div>
+            <div class="skill-card">
+                <h3>🔧 Backend</h3>
+                <p>Node.js • PHP • MySQL • Firebase</p>
+            </div>
+            <div class="skill-card">
+                <h3>📱 Mobile</h3>
+                <p>React Native • Flutter • Android Studio</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Proyek Terbaik</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=E-Commerce" alt="E-Commerce">
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Website</h3>
-                        <p>Website belanja online dengan fitur lengkap dan responsive design.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm">Live Demo</a>
-                            <a href="#" class="btn btn-sm secondary">GitHub</a>
-                        </div>
-                    </div>
+    <section id="contact">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <div class="contact-grid">
+            <div>
+                <h3>📧 Email</h3>
+                <p>benjaminengle@email.com</p>
+                
+                <h3>📱 WhatsApp</h3>
+                <p>+62 812-3456-7890</p>
+                
+                <h3>💼 LinkedIn</h3>
+                <p>linkedin.com/in/benjaminengle</p>
+            </div>
+            <div>
+                <h3>🌐 Sosial Media</h3>
+                <div class="contact-item">
+                    <strong>Instagram:</strong> @benjaminengle888
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/7ED321/FFFFFF?text=Portfolio" alt="Portfolio">
-                    </div>
-                    <div class="project-info">
-                        <h3>Personal Portfolio</h3>
-                        <p>Portofolio modern dengan animasi smooth dan dark mode.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm">Live Demo</a>
-                            <a href="#" class="btn btn-sm secondary">GitHub</a>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <strong>GitHub:</strong> benjaminengle888
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/F5A623/FFFFFF?text=Dashboard" alt="Dashboard">
-                    </div>
-                    <div class="project-info">
-                        <h3>Admin Dashboard</h3>
-                        <p>Dashboard admin dengan chart interaktif dan data real-time.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm">Live Demo</a>
-                            <a href="#" class="btn btn-sm secondary">GitHub</a>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <strong>Portfolio:</strong> benjaminengle888.github.io
                 </div>
+                <a href="mailto:benjaminengle@email.com" class="btn">Kirim Email</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>nama@email.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p>+62 812-3456-7890</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p>github.com/Ikbal Lbs</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Ikbal Lbs" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Ikbal Lbs. Dibuat dengan ❤️</p>
-        </div>
+    <footer>
+        <p>© 2024 Benjamin Engle. Made with ❤️ using GitHub Pages</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').style.background = 
+                window.scrollY > 100 ? 'rgba(102, 126, 234, 0.95)' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        });
+    </script>
 </body>
 </html>
